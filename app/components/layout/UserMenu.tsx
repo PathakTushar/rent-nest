@@ -2,12 +2,12 @@
 
 import { useCallback, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
-// import { signOut } from "next-auth/react";
+import { signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 import useLoginModal from "@/app/hooks/useLoginModal";
 import useRegisterModal from "@/app/hooks/useRegisterModal";
-// import useCurrentUser from "@/hooks/useCurrentUser";
+import useCurrentUser from "@/app/hooks/useCurrentUser";
 import useRentModal from "@/app/hooks/useRentModal";
 
 import MenuItem from "./MenuItem";
@@ -16,8 +16,7 @@ import Avatar from "../Avatar";
 const UserMenu = () => {
   const router = useRouter();
 
-  // const { data: currentUser } = useCurrentUser();
-  const currentUser = null;
+  const { data: currentUser } = useCurrentUser();
   const loginModal = useLoginModal();
   const registerModal = useRegisterModal();
   const rentModal = useRentModal();
@@ -76,8 +75,7 @@ const UserMenu = () => {
         >
           <AiOutlineMenu />
           <div className="hidden md:block">
-            <Avatar src=""/>
-            {/* <Avatar src={currentUser?.image} /> */}
+            <Avatar src={currentUser?.image} />
           </div>
         </div>
       </div>
@@ -122,8 +120,7 @@ const UserMenu = () => {
                 <hr />
                 <MenuItem 
                   label="Logout" 
-                  onClick={()=>{}}
-                  // onClick={() => signOut()}
+                  onClick={() => signOut()}
                 />
               </>
             ) : (
