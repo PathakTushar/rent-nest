@@ -9,16 +9,17 @@ import { AiFillGithub } from "react-icons/ai";
 
 import useRegisterModal from "@/app/hooks/useRegisterModal";
 import useLoginModal from "@/app/hooks/useLoginModal";
-import useCurrentUser from "@/app/hooks/useCurrentUser";
 
 import Modal from "./Modal";
 import Input from "../inputs/Input";
 import Heading from "../Heading";
 import Button from "../Button";
+import { useRouter } from "next/navigation";
 
 
 const LoginModal = () => {
-  const { mutate: mutateCurrentUser } = useCurrentUser();
+
+  const router = useRouter();
 
   const loginModal = useLoginModal();
   const registerModal = useRegisterModal();
@@ -49,7 +50,7 @@ const LoginModal = () => {
 
       if (callback?.ok) {
         toast.success('Logged in');
-        mutateCurrentUser();
+        router.refresh();
         loginModal.onClose();
       }
       
