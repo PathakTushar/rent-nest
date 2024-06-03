@@ -50,7 +50,9 @@ const SearchModal = () => {
     setStep((value) => value + 1);
   }, []);
 
-  const onSubmit = useCallback(async () => {
+  //some changes
+
+  const onSubmit = useCallback(() => {
     if (step !== STEPS.INFO) {
       return onNext();
     }
