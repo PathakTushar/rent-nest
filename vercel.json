@@ -6,7 +6,6 @@
     },
     "functions": {
       "api/**/*.ts": {
-        "runtime": "nodejs16.x",
         "includeFiles": "prisma/**"
       }
     },
