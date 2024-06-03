@@ -1,0 +1,15 @@
+{
+    "build": {
+      "env": {
+        "DATABASE_URL": "mongodb+srv://tusharph1:tushar@cluster0.tub1pld.mongodb.net/test"
+      }
+    },
+    "functions": {
+      "api/**/*.ts": {
+        "runtime": "nodejs16.x",
+        "includeFiles": "prisma/**"
+      }
+    },
+    "buildCommand": "npm run build && npx prisma generate"
+  }
+  
