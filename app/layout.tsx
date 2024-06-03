@@ -12,8 +12,8 @@ import ClientOnly from "./components/ClientOnly";
 import SearchModal from "./components/modals/SearchModal";
 
 export const metadata = {
-    title: "Airbnb",
-    description: "Airbnb Clone",
+    title: "RentNest",
+    description: "RentNest, which connects travellers",
 };
 
 const font = Nunito({

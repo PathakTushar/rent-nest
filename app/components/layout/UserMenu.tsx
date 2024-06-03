@@ -55,7 +55,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
                         cursor-pointer
                     "
                 >
-                    Airbnb your home
+                    RentNest your home
                 </div>
                 <div
                     onClick={toggleOpen}
@@ -120,7 +120,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
                                 />
                                 <MenuItem
                                     onClick={rentModal.onOpen}
-                                    label="Airbnb my home"
+                                    label="RentNest my home"
                                 />
                                 <MenuItem
                                     onClick={() => signOut()}
