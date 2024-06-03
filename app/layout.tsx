@@ -29,6 +29,11 @@ export default async function RootLayout({
 
     return (
         <html lang="en">
+            <head>
+                <title>{metadata.title}</title>
+                <meta name="description" content={metadata.description} />
+                <link rel="icon" href="/images/logo.png" /> {/* Update this line with the path to your logo */}
+            </head>
             <body className={font.className}>
                 <ClientOnly>
                     <ToasterProvider />
